@@ -1,0 +1,16 @@
+# Example Company Standards (replace with your own)
+
+naming_convention: "Site-Cam-###"
+default_codec: H.265
+default_resolution: 2688x1520
+default_fps: 15
+default_bitrate_kbps: 4096
+ntp_server: "pool.ntp.org"
+timezone: "America/New_York"
+services_to_disable:
+  - UPnP
+  - Telnet
+  - FTP
+recording_schedule: "Continuous + motion"
+password_min_length: 16
+password_complexity: "mixed case, numbers, symbols"

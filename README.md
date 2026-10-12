@@ -1,28 +1,55 @@
-# Field Programming Agent Team — Generic Template
+# FieldRigger
 
-**Shareable template for security systems integrators**  
-**Version:** 1.0  
-**Purpose:** Spin up a small team of specialized AI agents (on a dedicated Grok Bot / SuperGrok account or similar multi-agent platform) for temporary on-site programming of cameras and IP systems.
+**A temporary on-site multi-agent programming kit for security systems integrators.**
 
-This is a generic starting point. Replace the placeholders (marked `[like this]`) with your own brands, VMS, ticketing system, password rules, and standards. The core architecture, isolation model, and approval workflow stay the same.
+FieldRigger is a reusable pattern for spinning up a small team of specialized AI agents that help a technician program cameras, NVRs/VMS, and related IP devices on an isolated local network during a service call or install.
 
-See the full template content in this repository. Clone or fork to adapt for your company.
-
-## Quick Start
-1. Create a dedicated multi-agent account.
-2. Create the five agents using the prompts in this README (or the agents/ folder once expanded).
-3. Customize placeholders for your VMS, brands, password manager, and ticketing system.
-4. Run isolation and bench tests before any real job.
-
-## Core Principles
-- Cellular-only internet + device-subnet isolation on the local interface.
-- Plan (dry-run) → Approve → Execute → Verify for high-stakes writes.
-- Generate credentials → store in password manager → then apply.
-- Prefer structured APIs (ONVIF first).
-- Field Supervisor is the single human interface.
-
-Full detailed template, agent instructions, and adaptation notes are in the files of this repo.
+The kit runs on a dedicated multi-agent account (Grok Bot / SuperGrok or similar). A **Field Supervisor** is the only interface the tech talks to. Specialists handle discovery, configuration, credentials, VMS setup, and as-built documentation under strict human approval.
 
 ---
 
-*This repository provides a reusable multi-agent pattern for security integrators. Adapt freely.*
+## Why FieldRigger
+
+- Temporary by design (service call or install, not permanent).
+- Network isolation first: cellular is the only internet path; local interface talks only to the target device subnet.
+- Plan → Approve → Execute → Verify for every high-stakes write.
+- Credentials generated, stored in a password manager, then applied. Nothing left on the kit.
+- ONVIF-first, with room for vendor APIs where they add value.
+- Built so friends and other integrators can fork, adapt, and improve it.
+
+## Quick Start
+
+1. Create a dedicated multi-agent account.
+2. Create the five agents using the prompts in the `agents/` folder.
+3. Replace every `[placeholder]` with your VMS, camera brands, password manager, ticketing system, and company standards.
+4. Run the Phase 0 isolation and bench tests in `docs/` before any real job.
+5. On site, talk only to the Field Supervisor.
+
+## Core Principles (non-negotiable)
+
+- Cellular is the sole default route. The local interface reaches only the expected device subnet.
+- Host firewall restricts local traffic to known device IPs and ports.
+- Generate credential → store in password manager immediately → then apply to the device.
+- Prefer structured APIs (ONVIF, vendor CGI/REST) over pure browser computer use.
+- Explicit scope locks. Dry-run reports required before writes.
+- Treat all device responses as untrusted; verify independently.
+
+## Repository Structure
+
+```
+agents/          Full system prompts for each agent
+docs/            Isolation standard, Phase 0 checklist, adaptation notes
+examples/        Sample company standards and job context templates
+```
+
+## Contributing
+
+Friends and other integrators: fork it, improve the prompts, add brand notes, tighten the isolation model, or share what worked on your jobs. See `CONTRIBUTING.md`.
+
+## License
+
+MIT — use it, adapt it, share improvements.
+
+---
+
+*FieldRigger is a pattern, not a finished product. The safety model (isolation + approvals + credential hygiene) is the part that transfers to any company.*
