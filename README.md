@@ -1,14 +1,14 @@
-# Agent Nightfall
+# Agent Nightfall Field Operations
 
 **A temporary on-site multi-agent programming kit for security systems integrators.**
 
-Agent Nightfall is a reusable pattern for spinning up a small team of specialized AI agents that help a technician program cameras, NVRs/VMS, and related IP devices on an isolated local network during a service call or install.
+Agent Nightfall Field Operations is a reusable pattern for spinning up a small team of specialized AI agents that help a technician program cameras, NVRs/VMS, and related IP devices on an isolated local network during a service call or install.
 
 The kit runs on a dedicated multi-agent account (Grok Bot / SuperGrok or similar). A **Field Supervisor** is the only interface the tech talks to. Specialists handle discovery, configuration, credentials, VMS setup, and as-built documentation under strict human approval.
 
 ---
 
-## Why Agent Nightfall
+## Why Agent Nightfall Field Operations
 
 - Temporary by design (service call or install, not permanent).
 - Network isolation first: cellular is the only internet path; local interface talks only to the target device subnet.
@@ -52,4 +52,4 @@ MIT — use it, adapt it, share improvements.
 
 ---
 
-*Agent Nightfall is a pattern, not a finished product. The safety model (isolation + approvals + credential hygiene) is the part that transfers to any company.*
+*Agent Nightfall Field Operations is a pattern, not a finished product. The safety model (isolation + approvals + credential hygiene) is the part that transfers to any company.*
