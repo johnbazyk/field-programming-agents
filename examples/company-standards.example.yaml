@@ -1,4 +1,4 @@
-# Example Company Standards (replace with your own)
+# Company Standards (replace with your own)
 
 naming_convention: "Site-Cam-###"
 default_codec: H.265
@@ -13,4 +13,5 @@ services_to_disable:
   - FTP
 recording_schedule: "Continuous + motion"
 password_min_length: 16
-password_complexity: "mixed case, numbers, symbols"
+photo_tool: "[Your Photo Documentation Tool]"
+report_template_notes: "Include cover, device inventory, image gallery, schedule summary"
